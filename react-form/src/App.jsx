@@ -19,14 +19,54 @@ function App() {
   // }
 
   // Multiple state handler
-  // 21 min
+
+  const [formData, setFormData] = useState({firstName:'', lastName:'', email:''});
+
+  console.log('FormData', formData);
+  
+  function changeHandler(event) {
+    setFormData(prevData => {
+      return {
+        ...prevData,
+        [event.target.name] : event.target.value
+      }
+    })
+  }
+
+  // 45 min
 
   return (
     <div className="text-center mt-2">
       <form action="">
-        <input type="text" placeholder="First name" onChange={firstNameHanlder} className="border p-1"/>
+
+        <input type="text" 
+          placeholder="First name" 
+          name="firstName"
+          value={formData.firstName}
+          onChange={changeHandler} 
+          className="border p-1"
+        />
+
         <br /> <br />
-        <input type="text" placeholder="Last name" onChange={lastNameHandler}  className="border p-1"/>
+
+        <input type="text" 
+          placeholder="Last name" 
+          name="lastName"
+          value={formData.lastName}
+          onChange={changeHandler} 
+          className="border p-1"
+        />
+
+        <br /> <br />
+
+        <input type="email" 
+          placeholder="Email" 
+          name="email" 
+          onChange={changeHandler}
+          value={formData.email}
+          className="border p-1"
+        />
+        
       </form>
     </div>
   )
