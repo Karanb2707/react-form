@@ -33,8 +33,6 @@ function App() {
     })
   }
 
-  // 45 min
-
   return (
     <div className="text-center mt-2">
       <form action="">
@@ -42,8 +40,8 @@ function App() {
         <input type="text" 
           placeholder="First name" 
           name="firstName"
-          value={formData.firstName}
           onChange={changeHandler} 
+          value={formData.firstName}
           className="border p-1"
         />
 
@@ -52,8 +50,8 @@ function App() {
         <input type="text" 
           placeholder="Last name" 
           name="lastName"
+          onChange={changeHandler}
           value={formData.lastName}
-          onChange={changeHandler} 
           className="border p-1"
         />
 
